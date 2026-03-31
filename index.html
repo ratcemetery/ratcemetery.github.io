@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
   <header>
     <h1 class="logo-title">Rat Cemetery</h1>
     <p class="tagline">A Madison, WI Burial Ground</p>
@@ -16,44 +17,39 @@
       <a href="#about">About</a>
       <a href="#music">Music</a>
       <a href="#shows">Live Shows</a>
+      <a href="#connect">Connect</a>
       <a href="#merch">Merch</a>
-      <a href="#contact">Contacts & Booking</a>
+      <a href="#contact">Bookings</a>
     </nav>
   </header>
-  
-<audio id="player" src="audio/mordecai-and-rigby.mp3" autoplay loop muted preload="auto"></audio>
 
-<div class="audio-controls">
-  <button id="vol-down">–</button>
-  <button id="mute">Mute</button>
-  <button id="vol-up">+</button>
-</div>
+  <!-- AUDIO -->
+  <audio id="player" src="audio/mordecai-and-rigby.wav" autoplay loop muted></audio>
 
-  <script>
-  // Allow audio to unmute after the first click anywhere
-  document.addEventListener('click', () => {
-    if (player.muted) {
-      player.muted = false;
-    }
-  }, { once: true });
-</script>
+  <div class="audio-controls">
+    <button id="vol-down">–</button>
+    <button id="mute">Mute</button>
+    <button id="vol-up">+</button>
+  </div>
 
   <main>
+
     <!-- ABOUT -->
     <div class="divider">
-  <img src="assets/rat.svg" class="divider-icon" alt="">
-  <img src="assets/gravestone.svg" class="divider-icon" alt="">
-  <img src="assets/rat.svg" class="divider-icon" alt="">
-</div>
+      <img src="assets/rat.svg" class="divider-icon" alt="">
+      <img src="assets/gravestone.svg" class="divider-icon" alt="">
+      <img src="assets/rat.svg" class="divider-icon" alt="">
+    </div>
+
     <section id="about">
       <h2>About</h2>
+
       <p>
-        Sometimes rats die. Sometimes people bury them. What do you call the collective graves of their little
-        lifeless rodent husks? That, my friend, would be a Rat Cemetery.
+        Sometimes rats die. Sometimes people bury them. What do you call the collective graves of their little lifeless rodent husks? That, my friend, would be a Rat Cemetery.
       </p>
+
       <p>
-        Rat Cemetery was formed deep into the latter hours of a summer night in 2025. The breeze blew the shades open,
-        the lights went out, and a single match was lit. Thus, Rat Cemetery came to be.
+        Rat Cemetery was formed deep into the latter hours of a summer night. The breeze blew the shades open, the lights went out, and a single match was lit. Thus, Rat Cemetery came to be.
       </p>
 
       <h3>Band Members</h3>
@@ -63,7 +59,6 @@
         <li><strong>Kyle</strong> – Thumps and Shiz</li>
       </ul>
 
-      <!-- BAND PHOTO (UNEDITED) -->
       <div class="photo-frame">
         <img src="assets/band-photo.jpg" alt="Rat Cemetery band photo" />
       </div>
@@ -71,12 +66,14 @@
 
     <!-- MUSIC -->
     <div class="divider">
-  <img src="assets/rat.svg" class="divider-icon" alt="">
-  <img src="assets/gravestone.svg" class="divider-icon" alt="">
-  <img src="assets/rat.svg" class="divider-icon" alt="">
-</div>
+      <img src="assets/rat.svg" class="divider-icon" alt="">
+      <img src="assets/gravestone.svg" class="divider-icon" alt="">
+      <img src="assets/rat.svg" class="divider-icon" alt="">
+    </div>
+
     <section id="music">
       <h2>Music</h2>
+
       <p>
         Listen to our latest releases on
         <a href="https://ratcemetery.bandcamp.com" target="_blank">Bandcamp</a>.
@@ -89,11 +86,11 @@
         <a class="grave" href="lyrics/i-wanna-be-your-dog.html">The Stooges – I Wanna Be Your Dog</a>
         <a class="grave" href="lyrics/the-house.html">The House</a>
         <a class="grave" href="lyrics/do-we-have-an-a-string.html">Do We Have an A String</a>
-        <a class="grave" href="lyrics/too-many-puppies.html">Primus – Too Many Puppies.wav</a>
+        <a class="grave" href="lyrics/too-many-puppies.html">Primus – Too Many Puppies</a>
         <a class="grave" href="lyrics/pit-maneuver.html">Pit Maneuver</a>
         <a class="grave" href="lyrics/ace-of-spades.html">Motörhead – Ace of Spades</a>
         <a class="grave" href="lyrics/right-is-wrong.html">Right is Wrong</a>
-        <a class="grave" href="lyrics/d7.html">Wipers – D‑7</a>
+        <a class="grave" href="lyrics/d7.html">Wipers – D-7</a>
         <a class="grave" href="lyrics/ignorance.html">Ignorance</a>
         <a class="grave" href="lyrics/unsung.html">Helmet – Unsung</a>
         <a class="grave" href="lyrics/mk.html">M.K.</a>
@@ -104,10 +101,11 @@
 
     <!-- SHOWS -->
     <div class="divider">
-  <img src="assets/rat.svg" class="divider-icon" alt="">
-  <img src="assets/gravestone.svg" class="divider-icon" alt="">
-  <img src="assets/rat.svg" class="divider-icon" alt="">
-</div>
+      <img src="assets/rat.svg" class="divider-icon" alt="">
+      <img src="assets/gravestone.svg" class="divider-icon" alt="">
+      <img src="assets/rat.svg" class="divider-icon" alt="">
+    </div>
+
     <section id="shows">
       <h2>Live Shows</h2>
       <p>See our Instagram for more details. Check back soon for more upcoming shows!</p>
@@ -115,12 +113,14 @@
 
     <!-- MERCH -->
     <div class="divider">
-  <img src="assets/rat.svg" class="divider-icon" alt="">
-  <img src="assets/gravestone.svg" class="divider-icon" alt="">
-  <img src="assets/rat.svg" class="divider-icon" alt="">
-</div>
+      <img src="assets/rat.svg" class="divider-icon" alt="">
+      <img src="assets/gravestone.svg" class="divider-icon" alt="">
+      <img src="assets/rat.svg" class="divider-icon" alt="">
+    </div>
+
     <section id="merch">
       <h2>Merchandise</h2>
+
       <p>Get exclusive Rat Cemetery merch via Instagram DM or email:</p>
 
       <div class="merch-grid">
@@ -128,29 +128,33 @@
           <h3>Custom Drawn T-Shirts</h3>
           <p>$10</p>
         </div>
+
         <div class="merch-item">
           <h3>Hand-Written Letters</h3>
           <p>$3</p>
         </div>
+
         <div class="merch-item">
           <h3>Custom Poems Off Da Dome</h3>
           <p>$5</p>
         </div>
       </div>
     </section>
-  <div id="scurry-rat"></div>
 
     <!-- CONTACT -->
     <div class="divider">
-  <img src="assets/rat.svg" class="divider-icon" alt="">
-  <img src="assets/gravestone.svg" class="divider-icon" alt="">
-  <img src="assets/rat.svg" class="divider-icon" alt="">
-</div>
+      <img src="assets/rat.svg" class="divider-icon" alt="">
+      <img src="assets/gravestone.svg" class="divider-icon" alt="">
+      <img src="assets/rat.svg" class="divider-icon" alt="">
+    </div>
+
     <section id="contact">
       <h2>Contact & Bookings</h2>
+
       <p><strong>Email:</strong> <a href="mailto:ratcemeteryband@gmail.com">ratcemeteryband@gmail.com</a></p>
       <p><strong>Instagram:</strong> <a href="https://instagram.com/rat_cemetery" target="_blank">@rat_cemetery</a></p>
     </section>
+
   </main>
 
   <footer>
@@ -158,25 +162,6 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-  const player = document.getElementById('player');
-  const volUp = document.getElementById('vol-up');
-  const volDown = document.getElementById('vol-down');
-  const mute = document.getElementById('mute');
-
-  volUp.addEventListener('click', () => {
-    player.volume = Math.min(player.volume + 0.1, 1);
-  });
-
-  volDown.addEventListener('click', () => {
-    player.volume = Math.max(player.volume - 0.1, 0);
-  });
-
-  mute.addEventListener('click', () => {
-    player.muted = !player.muted;
-    mute.textContent = player.muted ? "Unmute" : "Mute";
-  });
-</script>
 
 </body>
 </html>
