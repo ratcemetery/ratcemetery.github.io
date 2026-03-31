@@ -79,6 +79,7 @@ body::before {
   opacity: 0.05;
   pointer-events: none;
   z-index: -1;
+  background-attachment: fixed;
 }
 
 /* ===== SECTION DIVIDERS ===== */
@@ -153,6 +154,8 @@ section {
 .grave:hover {
   background: #7bff00;
   color: #000;
+  transform: rotate(1deg) scale(1.03);
+  transition: 0.1s ease;
 }
 
 /* ===== MERCH ===== */
@@ -223,9 +226,14 @@ footer {
   font-family: Impact, sans-serif;
   letter-spacing: 0.05em;
   cursor: pointer;
+  box-shadow: 0 0 6px #000 inset, 0 0 4px #7bff00;
 }
 
 .audio-controls button:hover {
   background: #7bff00;
   color: #000;
+}
+.audio-controls {
+  text-align: center;
+  margin: 1rem 0 2rem;
 }
