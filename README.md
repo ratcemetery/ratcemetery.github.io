@@ -1,29 +1,36 @@
-# Rat Cemetery - Official Band Website
+# Rat Cemetery - A Madison, WI Burial Ground
 
-Welcome to the official website and repository for **Rat Cemetery**, a [your genre] band bringing dark, powerful, and unforgettable music to audiences everywhere.
+Sometimes rats die. Sometimes people bury them. What do you call the collective graves of their little lifeless rodent husks? That, my friend, would be a Rat Cemetery.
 
 ## 🎸 About
 
-Rat Cemetery is a [number]-piece band formed in [year]. We craft immersive soundscapes that blend [describe your music style]. Our mission is to create music that resonates with the depths of the human experience.
+Rat Cemetery was formed deep into the latter hours of a summer night. The breeze blew the shades open, the lights went out, and a single match was lit. Thus, Rat Cemetery came to be.
 
 ### Band Members
-- [Member Name] - [Instrument]
-- [Member Name] - [Instrument]
-- [Member Name] - [Instrument]
+- Tomastovsy - Geetar and Groans
+- Karl Kahn - Percussive Bangs and Booms
+- Kyle - Thumps and Shiz
 
 ## 🎵 Music
 
 Listen to our latest releases on:
-- [Spotify](https://spotify.com/artist/ratcemetery)
-- [Apple Music](https://music.apple.com/artist/ratcemetery)
-- [YouTube](https://youtube.com/@ratcemetery)
 - [Bandcamp](https://ratcemetery.bandcamp.com)
 
 ### Latest Album
-**[Album Title]** (Released: [Date])
-- Track 1
-- Track 2
-- Track 3
+**Live at Thursday Onward 2026-02-14** (Released: February 15, 2026)
+- The Stooges - I Wanna Be Your Dog
+- The House
+- Do We Have an A String
+- Primus - Too Many Puppies.wav
+- Pit Maneuver
+- Motörhead - Ace of Spades
+- Right is Wrong
+- Wipers - D-7
+- Ignorance
+- Helmet - Unsung
+- M.K.
+- Half
+- Arachnophobia
 
 ## 🎤 Live Shows
 
@@ -31,25 +38,20 @@ Check back soon for upcoming tour dates! Follow us on social media for announcem
 
 ## 📱 Connect With Us
 
-- **Email**: contact@ratcemetery.com
-- **Instagram**: [@ratcemetery](https://instagram.com/ratcemetery)
-- **Twitter**: [@ratcemetery](https://twitter.com/ratcemetery)
-- **Facebook**: [Rat Cemetery](https://facebook.com/ratcemetery)
-- **TikTok**: [@ratcemetery](https://tiktok.com/@ratcemetery)
+- **Email**: ratcemeteryband@gmail.com
+- **Instagram**: [@rat_cemetery](https://instagram.com/rat_cemetery)
 
 ## 🛍️ Merchandise
 
-Get exclusive Rat Cemetery merch:
-- T-shirts
-- Vinyl records
-- Limited edition items
-
-[Shop Now](https://shop.ratcemetery.com)
+Get exclusive Rat Cemetery merch via Instagram DM or email:
+- custom drawn T-shirts from the thrift store - $10
+- hand-written letters from the heart - $3
+- custom poems off da dome - $5
 
 ## 📧 Contact & Bookings
 
 For booking inquiries, press requests, or general inquiries:
-**Email**: bookings@ratcemetery.com
+**Email**: ratcemeteryband@gmail.com
 
 ## 💻 About This Website
 
