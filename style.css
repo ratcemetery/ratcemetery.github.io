@@ -6,10 +6,12 @@ body {
   margin: 0;
   padding: 0;
   text-shadow: 0 0 4px #000;
+  position: relative;
+  z-index: 1;
 }
 
 a {
-  color: #cc0000; /* 90s web-red */
+  color: #cc0000;
   text-decoration: none;
 }
 
@@ -23,8 +25,7 @@ header {
   text-align: center;
   padding: 2rem 1rem;
   border-bottom: 2px solid #333;
-  background: rgba(0, 0, 0, 0.65); /* darken behind text */
-  backdrop-filter: blur(2px);      /* subtle grunge blur */
+  background: rgba(0, 0, 0, 0.65);
 }
 
 .logo-title {
@@ -39,7 +40,6 @@ header {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: #ddd;
-  text-shadow: 0 0 6px #000;
   font-weight: bold;
 }
 
@@ -65,23 +65,32 @@ nav a:hover {
   color: #000;
 }
 
-/* ===== GRUNGE BACKGROUND ICONS ===== */
+/* ===== BACKGROUND ICONS ===== */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image: 
     url("assets/rat.svg"),
-    url("assets/gravestone.svg"),
-    url("assets/rat.svg");
+    url("assets/gravestone.svg");
   background-repeat: repeat;
-  background-size: 180px, 220px, 160px;
+  background-size: 180px, 220px;
   opacity: 0.05;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
-/* ===== SECTION DIVIDERS ===== */
+/* ===== CRT OVERLAY (SAFE FLICKER TARGET) ===== */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.02);
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* ===== DIVIDER ===== */
 .divider {
   display: flex;
   justify-content: center;
@@ -92,13 +101,7 @@ body::before {
 
 .divider-icon {
   width: 40px;
-  height: auto;
   filter: grayscale(100%) contrast(180%) brightness(80%);
-  transform: rotate(-3deg);
-}
-
-.divider-icon:nth-child(2) {
-  transform: rotate(2deg);
 }
 
 /* ===== MAIN ===== */
@@ -106,6 +109,8 @@ main {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 section {
@@ -115,7 +120,7 @@ section {
   border-left: 3px solid #7bff00;
 }
 
-/* ===== PHOTO FRAME ===== */
+/* ===== PHOTO ===== */
 .photo-frame {
   margin-top: 1.5rem;
   text-align: center;
@@ -145,16 +150,15 @@ section {
   width: 180px;
   text-align: center;
   font-size: 0.8rem;
-  text-decoration: none;
   color: #e0ff5f;
   cursor: pointer;
+  transition: 0.1s ease;
 }
 
 .grave:hover {
   background: #7bff00;
   color: #000;
-  transform: rotate(1deg) scale(1.03);
-  transition: 0.1s ease;
+  transform: rotate(1deg) scale(1.03) translateX(-2px);
 }
 
 /* ===== MERCH ===== */
@@ -179,41 +183,10 @@ footer {
   color: #aaa;
 }
 
-/* ===== LYRICS PAGE ===== */
-.lyrics-page {
-  max-width: 700px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: rgba(0, 0, 0, 0.75);
-  border-left: 3px solid #7bff00;
-}
-
-.lyrics-page h1 {
-  font-family: Impact, sans-serif;
-  color: #e0ff5f;
-  text-shadow: 0 0 10px #7bff00;
-  margin-bottom: 1.5rem;
-}
-
-.back-button {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.5rem 1rem;
-  background: #111;
-  border: 1px solid #444;
-  color: #e0ff5f;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.back-button:hover {
-  background: #7bff00;
-  color: #000;
-}
-
-.gif-wrapper {
-  max-width: 350px;   /* make it big */
-  margin: 2rem auto;  /* center it */
+/* ===== AUDIO ===== */
+.audio-controls {
+  text-align: center;
+  margin: 1rem 0 2rem;
 }
 
 .audio-controls button {
@@ -223,32 +196,10 @@ footer {
   padding: 0.4rem 0.8rem;
   margin: 0 0.3rem;
   font-family: Impact, sans-serif;
-  letter-spacing: 0.05em;
   cursor: pointer;
-  box-shadow: 0 0 6px #000 inset, 0 0 4px #7bff00;
 }
 
 .audio-controls button:hover {
   background: #7bff00;
   color: #000;
-}
-.audio-controls {
-  text-align: center;
-  margin: 1rem 0 2rem;
-}
-
-#scurry-rat {
-  position: fixed;
-  bottom: 20px;
-  left: -120px; /* start off-screen */
-  width: 100px;
-  height: 60px;
-  background-image: url('../assets/rat-silhouette.png'); /* or whatever rat image you want */
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  opacity: 0;
-  transform: scaleX(1); /* facing right */
-  z-index: 9999;
-  filter: brightness(0) contrast(200%); /* grungy silhouette look */
 }
