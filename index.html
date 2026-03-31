@@ -30,6 +30,15 @@
   <button id="vol-up">+</button>
 </div>
 
+  <script>
+  // Allow audio to unmute after the first click anywhere
+  document.addEventListener('click', () => {
+    if (player.muted) {
+      player.muted = false;
+    }
+  }, { once: true });
+</script>
+
   <main>
     <!-- ABOUT -->
     <div class="divider">
