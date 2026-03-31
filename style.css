@@ -229,3 +229,6 @@ footer {
   background: #7bff00;
   color: #000;
 }
+#audio {
+  display: none;
+}
