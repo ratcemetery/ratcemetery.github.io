@@ -51,6 +51,22 @@ nav a:hover {
   color: #000;
 }
 
+/* ===== GRUNGE BACKGROUND ICONS ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    url("assets/rat.svg"),
+    url("assets/gravestone.svg"),
+    url("assets/rat.svg");
+  background-repeat: repeat;
+  background-size: 180px, 220px, 160px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* ===== MAIN ===== */
 main {
   max-width: 900px;
