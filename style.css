@@ -208,3 +208,9 @@ footer {
   background: #7bff00;
   color: #000;
 }
+
+.gif-wrapper {
+  max-width: 500px;   /* make it big */
+  margin: 2rem auto;  /* center it */
+}
+
