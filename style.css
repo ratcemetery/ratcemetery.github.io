@@ -236,3 +236,19 @@ footer {
   text-align: center;
   margin: 1rem 0 2rem;
 }
+
+#scurry-rat {
+  position: fixed;
+  bottom: 20px;
+  left: -120px; /* start off-screen */
+  width: 100px;
+  height: 60px;
+  background-image: url('../assets/rat-silhouette.png'); /* or whatever rat image you want */
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0;
+  transform: scaleX(1); /* facing right */
+  z-index: 9999;
+  filter: brightness(0) contrast(200%); /* grungy silhouette look */
+}
