@@ -1,0 +1,37 @@
+body {
+    background: url('path/to/grunge-pattern.png'); /* Grunge pattern */
+    color: neon;
+    animation: glow 1.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px green, 0 0 10px green, 0 0 20px magenta, 0 0 30px magenta; }
+    50% { text-shadow: 0 0 10px green, 0 0 20px magenta, 0 0 40px yellow, 0 0 50px yellow; }
+    100% { text-shadow: 0 0 5px green, 0 0 10px green, 0 0 20px magenta, 0 0 30px magenta; }
+}
+
+h1, h2, h3 {
+    border: 2px solid magenta;
+    padding: 10px;
+}
+
+footer {
+    border: 2px solid yellow;
+    padding: 10px;
+}
+
+.gravestone {
+    background: url('path/to/gravestone.png');
+    width: 100px;
+    height: 200px;
+    position: relative;
+}
+
+.dead-rat {
+    background: url('path/to/dead-rat.png');
+    width: 50px;
+    height: 20px;
+    position: relative;
+}
+
+/* All previously deleted styles from index.html would be included here */
