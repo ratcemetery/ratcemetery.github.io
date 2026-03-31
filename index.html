@@ -4,470 +4,125 @@
   <meta charset="UTF-8" />
   <title>Rat Cemetery – Official Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    /* ===== RESET ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Courier New", monospace;
-      background:
-        radial-gradient(circle at top left, #333 0, #000 55%) fixed,
-        url("https://noise.texture.png") repeat; /* replace with your own texture if you want */
-      color: #f5f5f5;
-      line-height: 1.6;
-      text-shadow: 0 0 4px #000;
-    }
-
-    a {
-      color: #e0ff5f;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== LAYOUT ===== */
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      position: relative;
-      padding: 2.5rem 1.5rem 1rem;
-      text-align: center;
-      border-bottom: 2px solid #444;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
-    }
-
-    .logo-title {
-      font-family: "Impact", "Anton", system-ui;
-      font-size: 3.2rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #f5f5f5;
-      text-shadow:
-        0 0 6px #000,
-        0 0 14px #7bff00,
-        0 0 24px #7bff00;
-    }
-
-    .tagline {
-      margin-top: 0.4rem;
-      font-size: 0.9rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #c0c0c0;
-    }
-
-    nav {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-    }
-
-    nav a {
-      padding: 0.35rem 0.8rem;
-      border: 1px solid #666;
-      background: rgba(0, 0, 0, 0.7);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    nav a:hover {
-      background: #7bff00;
-      color: #000;
-      text-shadow: none;
-    }
-
-    main {
-      flex: 1;
-      padding: 2rem 1.5rem 3rem;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    section {
-      margin-bottom: 3rem;
-      position: relative;
-      padding: 1.5rem 1.25rem 1.75rem;
-      border-left: 3px solid #7bff00;
-      background: rgba(0, 0, 0, 0.7);
-      box-shadow: 0 0 18px rgba(0, 0, 0, 0.9);
-    }
-
-    section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px dashed rgba(255, 255, 255, 0.08);
-      pointer-events: none;
-    }
-
-    h2 {
-      font-family: "Impact", "Anton", system-ui;
-      font-size: 1.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 0.75rem;
-      color: #e0ff5f;
-    }
-
-    h3 {
-      font-size: 1.05rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin: 1.25rem 0 0.5rem;
-      color: #f5f5f5;
-    }
-
-    p {
-      margin-bottom: 0.6rem;
-      font-size: 0.95rem;
-    }
-
-    ul {
-      list-style: none;
-      margin-left: 0.5rem;
-    }
-
-    ul li::before {
-      content: "✝ ";
-      color: #7bff00;
-      margin-right: 0.25rem;
-    }
-
-    .inline-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem 1.25rem;
-    }
-
-    .inline-list li::before {
-      content: "☠ ";
-    }
-
-    /* ===== GRAVEYARD STRIP ===== */
-    .graveyard {
-      margin-top: 1.25rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .grave {
-      position: relative;
-      width: 130px;
-      height: 150px;
-      background: linear-gradient(to bottom, #555, #222);
-      border-radius: 65px 65px 10px 10px;
-      border: 2px solid #111;
-      box-shadow:
-        0 0 10px rgba(0, 0, 0, 0.9),
-        inset 0 0 8px rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem;
-      text-align: center;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .grave::after {
-      content: "R.I.P.";
-      position: absolute;
-      top: 10px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 0.6rem;
-      color: #c0ff9a;
-      opacity: 0.7;
-    }
-
-    .grave span {
-      margin-top: 0.8rem;
-    }
-
-    /* ===== DEAD RATS ===== */
-    .rat-row {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      opacity: 0.9;
-    }
-
-    .rat {
-      position: relative;
-      width: 80px;
-      height: 40px;
-      background: #444;
-      border-radius: 40px 30px 30px 40px;
-      transform: rotate(-8deg);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-    }
-
-    .rat::before {
-      /* head */
-      content: "";
-      position: absolute;
-      right: -18px;
-      top: 8px;
-      width: 26px;
-      height: 24px;
-      background: #444;
-      border-radius: 50%;
-    }
-
-    .rat::after {
-      /* tail */
-      content: "";
-      position: absolute;
-      left: -18px;
-      top: 16px;
-      width: 26px;
-      height: 4px;
-      background: #777;
-      border-radius: 10px;
-      transform: rotate(-20deg);
-    }
-
-    .rat-eye {
-      position: absolute;
-      right: -6px;
-      top: 12px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      border: 2px solid #ff0000;
-      box-shadow: 0 0 6px #ff0000;
-    }
-
-    .rat-eye::after {
-      content: "✝";
-      position: absolute;
-      font-size: 0.45rem;
-      color: #ff0000;
-      top: -4px;
-      left: -1px;
-    }
-
-    /* ===== MERCH CARDS ===== */
-    .merch-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .merch-item {
-      border: 1px solid #555;
-      padding: 0.9rem;
-      background: rgba(10, 10, 10, 0.9);
-      font-size: 0.9rem;
-    }
-
-    .merch-item-title {
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.25rem;
-      color: #e0ff5f;
-    }
-
-    footer {
-      padding: 1.25rem 1.5rem 1.75rem;
-      text-align: center;
-      font-size: 0.75rem;
-      border-top: 2px solid #444;
-      background: rgba(0, 0, 0, 0.9);
-      color: #b0b0b0;
-    }
-
-    .footer-link {
-      color: #e0ff5f;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (min-width: 768px) {
-      header {
-        padding: 3rem 2rem 1.5rem;
-      }
-
-      .logo-title {
-        font-size: 4rem;
-      }
-
-      main {
-        padding: 3rem 2rem 4rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="page">
-    <header>
-      <div class="logo-title">Rat Cemetery</div>
-      <div class="tagline">A Madison, WI Burial Ground for Blown-Out Amps & Dead Rats</div>
+  <header>
+    <h1 class="logo-title">Rat Cemetery</h1>
+    <p class="tagline">A Madison, WI Burial Ground</p>
 
-      <nav>
-        <a href="#about">About</a>
-        <a href="#music">Music</a>
-        <a href="#shows">Live Shows</a>
-        <a href="#connect">Connect</a>
-        <a href="#merch">Merch</a>
-        <a href="#contact">Bookings</a>
-      </nav>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#music">Music</a>
+      <a href="#shows">Live Shows</a>
+      <a href="#connect">Connect</a>
+      <a href="#merch">Merch</a>
+      <a href="#contact">Bookings</a>
+    </nav>
+  </header>
 
-      <div class="rat-row" aria-hidden="true">
-        <div class="rat"><div class="rat-eye"></div></div>
-        <div class="rat"><div class="rat-eye"></div></div>
-        <div class="rat"><div class="rat-eye"></div></div>
-      </div>
-    </header>
-
-    <main>
-      <!-- ABOUT -->
-      <section id="about">
-        <h2>About</h2>
-        <p>
-          Sometimes rats die. Sometimes people bury them. What do you call the collective graves of their little
-          lifeless rodent husks? That, my friend, would be a Rat Cemetery.
-        </p>
-        <p>
-          Rat Cemetery was formed deep into the latter hours of a summer night. The breeze blew the shades open,
-          the lights went out, and a single match was lit. Thus, Rat Cemetery came to be.
-        </p>
-
-        <h3>Band Members</h3>
-        <ul>
-          <li><strong>Tomastovsy</strong> – Geetar and Groans</li>
-          <li><strong>Karl Kahn</strong> – Percussive Bangs and Booms</li>
-          <li><strong>Kyle</strong> – Thumps and Shiz</li>
-        </ul>
-      </section>
-
-      <!-- MUSIC -->
-      <section id="music">
-        <h2>Music</h2>
-        <p>
-          Listen to our latest releases on
-          <a href="https://ratcemetery.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a>.
-        </p>
-
-        <h3>Latest Album</h3>
-        <p><strong>Live at Thursday Onward 2026-02-14</strong> (Released: February 15, 2026)</p>
-
-        <div class="graveyard" aria-label="Song graveyard">
-          <div class="grave"><span>The Stooges – I Wanna Be Your Dog</span></div>
-          <div class="grave"><span>The House</span></div>
-          <div class="grave"><span>Do We Have an A String</span></div>
-          <div class="grave"><span>Primus – Too Many Puppies.wav</span></div>
-          <div class="grave"><span>Pit Maneuver</span></div>
-          <div class="grave"><span>Motörhead – Ace of Spades</span></div>
-          <div class="grave"><span>Right is Wrong</span></div>
-          <div class="grave"><span>Wipers – D-7</span></div>
-          <div class="grave"><span>Ignorance</span></div>
-          <div class="grave"><span>Helmet – Unsung</span></div>
-          <div class="grave"><span>M.K.</span></div>
-          <div class="grave"><span>Half</span></div>
-          <div class="grave"><span>Arachnophobia</span></div>
-        </div>
-      </section>
-
-      <!-- SHOWS -->
-      <section id="shows">
-        <h2>Live Shows</h2>
-        <p>Check back soon for upcoming tour dates. The rats are restless.</p>
-        <p>Follow us on social media for announcements and last-minute graveyard gatherings.</p>
-      </section>
-
-      <!-- CONNECT -->
-      <section id="connect">
-        <h2>Connect With Us</h2>
-        <ul class="inline-list">
-          <li><strong>Email:</strong> <a href="mailto:ratcemeteryband@gmail.com">ratcemeteryband@gmail.com</a></li>
-          <li>
-            <strong>Instagram:</strong>
-            <a href="https://instagram.com/rat_cemetery" target="_blank" rel="noopener noreferrer">@rat_cemetery</a>
-          </li>
-        </ul>
-      </section>
-
-      <!-- MERCH -->
-      <section id="merch">
-        <h2>Merchandise</h2>
-        <p>Get exclusive Rat Cemetery relics via Instagram DM or email:</p>
-
-        <div class="merch-grid">
-          <div class="merch-item">
-            <div class="merch-item-title">Custom Drawn T-Shirts</div>
-            <p>Thrift store finds, defaced with love and permanent marker.</p>
-            <p><strong>$10</strong></p>
-          </div>
-          <div class="merch-item">
-            <div class="merch-item-title">Hand-Written Letters</div>
-            <p>From the heart, from the grave, from whoever’s holding the pen.</p>
-            <p><strong>$3</strong></p>
-          </div>
-          <div class="merch-item">
-            <div class="merch-item-title">Custom Poems Off Da Dome</div>
-            <p>Improvised verse for your loved ones, enemies, or deceased rodents.</p>
-            <p><strong>$5</strong></p>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact">
-        <h2>Contact &amp; Bookings</h2>
-        <p>
-          For booking inquiries, press requests, or general questions about the burial of sound:
-        </p>
-        <p><strong>Email:</strong> <a href="mailto:ratcemeteryband@gmail.com">ratcemeteryband@gmail.com</a></p>
-      </section>
-
-      <!-- ABOUT SITE -->
-      <section id="site">
-        <h2>About This Website</h2>
-        <p>
-          This is the official website for Rat Cemetery, hosted on GitHub Pages. The source code is available in this
-          repository.
-        </p>
-
-        <h3>Technologies Used</h3>
-        <ul>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript (if we feel like it)</li>
-        </ul>
-
-        <h3>License</h3>
-        <p>All content and music on this website are © 2026 Rat Cemetery. All rights reserved.</p>
-      </section>
-    </main>
-
-    <footer>
+  <main>
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
       <p>
-        Visit the GitHub Pages version:
-        <a class="footer-link" href="https://thomasrastovski.github.io" target="_blank" rel="noopener noreferrer">
-          thomasrastovski.github.io
-        </a>
+        Sometimes rats die. Sometimes people bury them. What do you call the collective graves of their little
+        lifeless rodent husks? That, my friend, would be a Rat Cemetery.
       </p>
-      <p>Long live the rats. Long live the noise.</p>
-    </footer>
-  </div>
+      <p>
+        Rat Cemetery was formed deep into the latter hours of a summer night. The breeze blew the shades open,
+        the lights went out, and a single match was lit. Thus, Rat Cemetery came to be.
+      </p>
+
+      <h3>Band Members</h3>
+      <ul>
+        <li><strong>Tomastovsy</strong> – Geetar and Groans</li>
+        <li><strong>Karl Kahn</strong> – Percussive Bangs and Booms</li>
+        <li><strong>Kyle</strong> – Thumps and Shiz</li>
+      </ul>
+
+      <!-- BAND PHOTO (UNEDITED) -->
+      <div class="photo-frame">
+        <img src="assets/band-photo.jpg" alt="Rat Cemetery band photo" />
+      </div>
+    </section>
+
+    <!-- MUSIC -->
+    <section id="music">
+      <h2>Music</h2>
+      <p>
+        Listen to our latest releases on
+        <a href="https://ratcemetery.bandcamp.com" target="_blank">Bandcamp</a>.
+      </p>
+
+      <h3>Latest Album</h3>
+      <p><strong>Live at Thursday Onward 2026-02-14</strong> (Released: February 15, 2026)</p>
+
+      <div class="graveyard">
+        <div class="grave">The Stooges – I Wanna Be Your Dog</div>
+        <div class="grave">The House</div>
+        <div class="grave">Do We Have an A String</div>
+        <div class="grave">Primus – Too Many Puppies.wav</div>
+        <div class="grave">Pit Maneuver</div>
+        <div class="grave">Motörhead – Ace of Spades</div>
+        <div class="grave">Right is Wrong</div>
+        <div class="grave">Wipers – D-7</div>
+        <div class="grave">Ignorance</div>
+        <div class="grave">Helmet – Unsung</div>
+        <div class="grave">M.K.</div>
+        <div class="grave">Half</div>
+        <div class="grave">Arachnophobia</div>
+      </div>
+    </section>
+
+    <!-- SHOWS -->
+    <section id="shows">
+      <h2>Live Shows</h2>
+      <p>Check back soon for upcoming tour dates.</p>
+    </section>
+
+    <!-- CONNECT -->
+    <section id="connect">
+      <h2>Connect With Us</h2>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:ratcemeteryband@gmail.com">ratcemeteryband@gmail.com</a></li>
+        <li><strong>Instagram:</strong> <a href="https://instagram.com/rat_cemetery" target="_blank">@rat_cemetery</a></li>
+      </ul>
+    </section>
+
+    <!-- MERCH -->
+    <section id="merch">
+      <h2>Merchandise</h2>
+      <p>Get exclusive Rat Cemetery merch via Instagram DM or email:</p>
+
+      <div class="merch-grid">
+        <div class="merch-item">
+          <h3>Custom Drawn T-Shirts</h3>
+          <p>$10</p>
+        </div>
+        <div class="merch-item">
+          <h3>Hand-Written Letters</h3>
+          <p>$3</p>
+        </div>
+        <div class="merch-item">
+          <h3>Custom Poems Off Da Dome</h3>
+          <p>$5</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact & Bookings</h2>
+      <p><strong>Email:</strong> <a href="mailto:ratcemeteryband@gmail.com">ratcemeteryband@gmail.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Rat Cemetery. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
