@@ -157,3 +157,35 @@ footer {
   background: #000;
   color: #aaa;
 }
+
+/* ===== LYRICS PAGE ===== */
+.lyrics-page {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.75);
+  border-left: 3px solid #7bff00;
+}
+
+.lyrics-page h1 {
+  font-family: Impact, sans-serif;
+  color: #e0ff5f;
+  text-shadow: 0 0 10px #7bff00;
+  margin-bottom: 1.5rem;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  background: #111;
+  border: 1px solid #444;
+  color: #e0ff5f;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.back-button:hover {
+  background: #7bff00;
+  color: #000;
+}
