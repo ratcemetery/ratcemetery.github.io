@@ -8,6 +8,16 @@ body {
   text-shadow: 0 0 4px #000;
 }
 
+a {
+  color: #cc0000; /* 90s web-red */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0000;
+  text-shadow: 0 0 6px #ff0000;
+}
+
 /* ===== HEADER ===== */
 header {
   text-align: center;
