@@ -67,6 +67,26 @@ body::before {
   z-index: -1;
 }
 
+/* ===== SECTION DIVIDERS ===== */
+.divider {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0 1rem;
+  opacity: 0.8;
+}
+
+.divider-icon {
+  width: 40px;
+  height: auto;
+  filter: grayscale(100%) contrast(180%) brightness(80%);
+  transform: rotate(-3deg);
+}
+
+.divider-icon:nth-child(2) {
+  transform: rotate(2deg);
+}
+
 /* ===== MAIN ===== */
 main {
   max-width: 900px;
