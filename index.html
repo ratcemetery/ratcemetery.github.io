@@ -23,15 +23,13 @@
     </nav>
   </header>
 
-
   <!-- AUDIO -->
-  <audio id="player" src="audio/mordecai-and-rigby.mp3" autoplay loop muted></audio>
+  <audio id="player" src="audio/mordecai-and-rigby.mp3" loop muted></audio>
 
   <div class="audio-controls">
-       <button id="vol-down">–</button>
+    <button id="vol-down">–</button>
     <button id="playPause">PLAY</button>
     <button id="vol-up">+</button>
-    
   </div>
 
   <main>
@@ -163,56 +161,61 @@
     <p>© 2026 Rat Cemetery. All rights reserved.</p>
   </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const player = document.getElementById('player');
-  const playPause = document.getElementById('playPause');
-  const volUp = document.getElementById('vol-up');
-  const volDown = document.getElementById('vol-down');
+  <!-- Your random spin + other JS -->
+  <script src="script.js"></script>
 
-  // AUTOPLAY ON FIRST SCROLL
+  <!-- Autoplay on scroll/touch/wheel -->
+  <script>
   let hasScrolledToPlay = false;
 
-  window.addEventListener('scroll', () => {
-    if (!hasScrolledToPlay) {
-      hasScrolledToPlay = true;
+  function tryPlay() {
+    if (hasScrolledToPlay) return;
+    hasScrolledToPlay = true;
+
+    const player = document.getElementById('player');
+    const playPause = document.getElementById('playPause');
+
+    player.muted = false;
+    player.play();
+    playPause.textContent = "PAUSE";
+  }
+
+  window.addEventListener('scroll', tryPlay, { once: true });
+  window.addEventListener('touchstart', tryPlay, { once: true });
+  window.addEventListener('wheel', tryPlay, { once: true });
+  </script>
+
+  <!-- Play/Pause + Volume -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const player = document.getElementById('player');
+    const playPause = document.getElementById('playPause');
+    const volUp = document.getElementById('vol-up');
+    const volDown = document.getElementById('vol-down');
+
+    playPause.addEventListener('click', () => {
       player.muted = false;
-      player.play();
-      playPause.textContent = "PAUSE";
-    }
+
+      if (player.paused) {
+        player.play();
+        playPause.textContent = "PAUSE";
+      } else {
+        player.pause();
+        playPause.textContent = "PLAY";
+      }
+    });
+
+    volUp.addEventListener('click', () => {
+      player.muted = false;
+      player.volume = Math.min(player.volume + 0.1, 1);
+    });
+
+    volDown.addEventListener('click', () => {
+      player.muted = false;
+      player.volume = Math.max(player.volume - 0.1, 0);
+    });
   });
-
-  // PLAY / PAUSE (also unmutes on first tap)
-  playPause.addEventListener('click', () => {
-    player.muted = false;
-
-    if (player.paused) {
-      player.play();
-      playPause.textContent = "PAUSE";
-    } else {
-      player.pause();
-      playPause.textContent = "PLAY";
-    }
-  });
-
-  // VOLUME UP
-  volUp.addEventListener('click', () => {
-    player.muted = false;
-    player.volume = Math.min(player.volume + 0.1, 1);
-  });
-
-  // VOLUME DOWN
-  volDown.addEventListener('click', () => {
-    player.muted = false;
-    player.volume = Math.max(player.volume - 0.1, 0);
-  });
-});
-</script>
-
-
-  
-  <script src="script.js"></script>
+  </script>
 
 </body>
 </html>
-
