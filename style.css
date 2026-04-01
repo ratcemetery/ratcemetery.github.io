@@ -220,23 +220,16 @@ footer {
   color: #000;
 }
 
-/* ===== GRAVE SPIN ===== */
-@keyframes spin-once {
+/* ===== RANDOM GRAVE SPIN ===== */
+@keyframes spinOnce {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-.divider-icon {
-  animation: spin-once 2s linear;
-  animation-iteration-count: 1;
-  animation-play-state: paused;
+.divider-icon.spin {
+  animation: spinOnce 1.2s linear;
 }
 
-/* randomly trigger the spin every so often */
-.divider-icon:hover,
-.divider-icon:nth-child(2n):active {
-  animation-play-state: running;
-}
 
 /* ===== NEON TITLE GLOW ===== */
 @keyframes neonPulse {
