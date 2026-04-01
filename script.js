@@ -5,9 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const volUp = document.getElementById('vol-up');
   const volDown = document.getElementById('vol-down');
 
+  // AUTOPLAY ON FIRST SCROLL
+  let hasScrolledToPlay = false;
+
+  window.addEventListener('scroll', () => {
+    if (!hasScrolledToPlay) {
+      hasScrolledToPlay = true;
+      player.muted = false;
+      player.play();
+      playPause.textContent = "PAUSE";
+    }
+  });
+
   // PLAY / PAUSE (also unmutes on first tap)
   playPause.addEventListener('click', () => {
-    player.muted = false; // first gesture unlocks audio
+    player.muted = false; // unlock audio on first gesture
 
     if (player.paused) {
       player.play();
@@ -30,5 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     player.volume = Math.max(player.volume - 0.1, 0);
   });
 });
+</script>
+
 </script>
 
