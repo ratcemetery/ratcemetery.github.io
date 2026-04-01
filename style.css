@@ -174,3 +174,16 @@ footer {
   background: #7bff00;
   color: #000;
 }
+/* ===== GIF FIXES ===== */
+.gif-wrapper {
+  max-width: 350px;
+  margin: 2rem auto;
+  display: block;
+}
+
+.gif-wrapper img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
