@@ -23,13 +23,16 @@
     </nav>
   </header>
 
+
   <!-- AUDIO -->
   <audio id="player" src="audio/mordecai-and-rigby.mp3" autoplay loop muted></audio>
 
   <div class="audio-controls">
+    <button id="playPause">PLAY</button>
     <button id="vol-down">–</button>
     <button id="mute">Mute</button>
     <button id="vol-up">+</button>
+    
   </div>
 
   <main>
@@ -160,6 +163,26 @@
   <footer>
     <p>© 2026 Rat Cemetery. All rights reserved.</p>
   </footer>
+
+    <script>
+  const player = document.getElementById('player');
+  const playPause = document.getElementById('playPause');
+
+  playPause.addEventListener('click', () => {
+    // First user gesture: unmute + play
+    if (player.muted) {
+      player.muted = false;
+    }
+
+    if (player.paused) {
+      player.play();
+      playPause.textContent = "PAUSE";
+    } else {
+      player.pause();
+      playPause.textContent = "PLAY";
+    }
+  });
+</script>
 
   <script src="script.js"></script>
 
