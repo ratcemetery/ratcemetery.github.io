@@ -30,7 +30,6 @@
   <div class="audio-controls">
     <button id="playPause">PLAY</button>
     <button id="vol-down">–</button>
-    <button id="mute">Mute</button>
     <button id="vol-up">+</button>
     
   </div>
@@ -164,15 +163,16 @@
     <p>© 2026 Rat Cemetery. All rights reserved.</p>
   </footer>
 
-    <script>
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
   const player = document.getElementById('player');
   const playPause = document.getElementById('playPause');
+  const volUp = document.getElementById('vol-up');
+  const volDown = document.getElementById('vol-down');
 
+  // PLAY / PAUSE (also unmutes on first tap)
   playPause.addEventListener('click', () => {
-    // First user gesture: unmute + play
-    if (player.muted) {
-      player.muted = false;
-    }
+    player.muted = false; // unlock audio on first gesture
 
     if (player.paused) {
       player.play();
@@ -182,8 +182,22 @@
       playPause.textContent = "PLAY";
     }
   });
+
+  // VOLUME UP
+  volUp.addEventListener('click', () => {
+    player.muted = false;
+    player.volume = Math.min(player.volume + 0.1, 1);
+  });
+
+  // VOLUME DOWN
+  volDown.addEventListener('click', () => {
+    player.muted = false;
+    player.volume = Math.max(player.volume - 0.1, 0);
+  });
+});
 </script>
 
+  
   <script src="script.js"></script>
 
 </body>
