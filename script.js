@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // PLAY / PAUSE (also unmutes on first tap)
   playPause.addEventListener('click', () => {
-    player.muted = false; // unlock audio on first gesture
+    player.muted = false;
 
     if (player.paused) {
       player.play();
@@ -41,8 +41,28 @@ document.addEventListener("DOMContentLoaded", () => {
     player.muted = false;
     player.volume = Math.max(player.volume - 0.1, 0);
   });
+
+  // RANDOM GRAVE SPINS
+  function randomSpin() {
+    const icons = document.querySelectorAll('.divider-icon');
+    if (icons.length === 0) return;
+
+    const icon = icons[Math.floor(Math.random() * icons.length)];
+
+    icon.classList.add('spin');
+
+    setTimeout(() => {
+      icon.classList.remove('spin');
+    }, 1200);
+  }
+
+  // trigger a spin every 4–10 seconds
+  setInterval(() => {
+    randomSpin();
+  }, Math.random() * 6000 + 4000);
 });
 </script>
+
 
 </script>
 
