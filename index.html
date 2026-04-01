@@ -163,16 +163,28 @@
     <p>© 2026 Rat Cemetery. All rights reserved.</p>
   </footer>
 
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const player = document.getElementById('player');
   const playPause = document.getElementById('playPause');
   const volUp = document.getElementById('vol-up');
   const volDown = document.getElementById('vol-down');
 
+  // AUTOPLAY ON FIRST SCROLL
+  let hasScrolledToPlay = false;
+
+  window.addEventListener('scroll', () => {
+    if (!hasScrolledToPlay) {
+      hasScrolledToPlay = true;
+      player.muted = false;
+      player.play();
+      playPause.textContent = "PAUSE";
+    }
+  });
+
   // PLAY / PAUSE (also unmutes on first tap)
   playPause.addEventListener('click', () => {
-    player.muted = false; // unlock audio on first gesture
+    player.muted = false;
 
     if (player.paused) {
       player.play();
@@ -196,6 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
 
   
   <script src="script.js"></script>
