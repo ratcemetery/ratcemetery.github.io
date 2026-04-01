@@ -220,4 +220,37 @@ footer {
   color: #000;
 }
 
+/* ===== GRAVE SPIN ===== */
+@keyframes spin-once {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
+.divider-icon {
+  animation: spin-once 2s linear;
+  animation-iteration-count: 1;
+  animation-play-state: paused;
+}
+
+/* randomly trigger the spin every so often */
+.divider-icon:hover,
+.divider-icon:nth-child(2n):active {
+  animation-play-state: running;
+}
+
+/* ===== NEON TITLE GLOW ===== */
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 5px #7bff00, 0 0 10px #7bff00, 0 0 20px #7bff00;
+  }
+  50% {
+    text-shadow: 0 0 10px #baff3d, 0 0 20px #baff3d, 0 0 40px #baff3d;
+  }
+  100% {
+    text-shadow: 0 0 5px #7bff00, 0 0 10px #7bff00, 0 0 20px #7bff00;
+  }
+}
+
+.logo-title {
+  animation: neonPulse 3s ease-in-out infinite;
+}
